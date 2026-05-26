@@ -10,24 +10,29 @@ const activations = [
     title: "Buka Outlet Bersama",
     description: "Bergabung jadi mitra Austin Klepon Coffee. Modal terjangkau, support penuh dari tim kami.",
     cta: "Daftar Mitra",
+    // Menggunakan format internasional tanpa angka 0 di depan untuk wa.me
+    link: "https://wa.me/6282123155569?text=Halo%20Austin%20Klepon%20Coffee,%20saya%20tertarik%20untuk%20Daftar%20Mitra%20Buka%20Outlet%20Bersama.",
   },
   {
     icon: Users,
     title: "Komunitas Ngopi",
     description: "Join komunitas pecinta kopi AKC. Event rutin, diskon khusus member, dan banyak kejutan.",
     cta: "Gabung Sekarang",
+    link: "https://wa.me/6282123155569?text=Halo%20Austin%20Klepon%20Coffee,%20saya%20ingin%20bergabung%20dengan%20Komunitas%20Ngopi.",
   },
   {
     icon: Building2,
     title: "Korporat & Kantor",
     description: "Supply kopi untuk kantor atau acara perusahaan kamu. Harga spesial untuk pemesanan bulk.",
     cta: "Minta Penawaran",
+    link: "https://wa.me/6282123155569?text=Halo%20Austin%20Klepon%20Coffee,%20saya%20ingin%20meminta%20penawaran%20untuk%20Korporat%20%26%20Kantor.",
   },
   {
     icon: Truck,
     title: "Catering & Event",
     description: "Kami siap hadir di acara kamu — wedding, gathering, bazaar, dan semua event spesialmu.",
     cta: "Pesan Catering",
+    link: "https://wa.me/6282123155569?text=Halo%20Austin%20Klepon%20Coffee,%20saya%20ingin%20memesan%20Catering%20%26%20Event.",
   },
 ]
 
@@ -135,8 +140,13 @@ export function ActivationsSection() {
                 <p className="text-white/60 group-hover:text-[#1A1A1A]/60 font-mono text-xs leading-relaxed mb-4 transition-colors duration-300">
                   {activation.description}
                 </p>
-                <motion.button
-                  className="flex items-center gap-2 text-[#C8873A] group-hover:text-[#1A1A1A] font-bold text-xs tracking-wide transition-colors duration-300"
+                
+                {/* Mengubah button menjadi motion.a agar bisa melakukan navigasi link luar (WhatsApp) */}
+                <motion.a
+                  href={activation.link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-[#C8873A] group-hover:text-[#1A1A1A] font-bold text-xs tracking-wide transition-colors duration-300"
                   whileHover={{ x: 4 }}
                   transition={{ type: "spring", stiffness: 400, damping: 17 }}
                 >
@@ -144,7 +154,7 @@ export function ActivationsSection() {
                   <svg className="w-3 h-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
                   </svg>
-                </motion.button>
+                </motion.a>
               </div>
             </motion.div>
           ))}
