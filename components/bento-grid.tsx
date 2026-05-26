@@ -31,7 +31,7 @@ const features = [
     icon: Star,
     title: "Gula",
     subtitle: "Aren Asli",
-    description: "Langsung dari pengrajin gula aren tradisional",
+    description: "Langsung dari Petani Gula Aren",
     accent: "#F5C842",
   },
 ]
