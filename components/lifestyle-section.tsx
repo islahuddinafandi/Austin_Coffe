@@ -123,12 +123,15 @@ export function LifestyleSection() {
                 } relative group`}
               >
                 <motion.img
-                  src={`/placeholder.svg?height=${img.aspect === "portrait" ? 400 : 300}&width=${img.aspect === "landscape" ? 600 : 300}&query=${img.query}`}
-                  alt=""
-                  className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
-                  whileHover={{ scale: 1.1 }}
-                  transition={{ duration: 0.6 }}
-                />
+                // Menggunakan Unsplash API agar "query" di array lifestyleImages Anda berfungsi
+                src={`https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop&sig=${index}`} 
+                // Atau jika ingin sesuai query unik masing-masing:
+                // src={`https://source.unsplash.com/featured/${img.aspect === "landscape" ? "800x450" : "600x800"}?${img.query}`}
+                alt="Austin Klepon Coffee Lifestyle"
+                className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700"
+                whileHover={{ scale: 1.1 }}
+                transition={{ duration: 0.6 }}
+              />
                 <motion.div
                   className="absolute inset-0 bg-[#C8873A]/0 group-hover:bg-[#C8873A]/20"
                   initial={{ opacity: 0 }}
